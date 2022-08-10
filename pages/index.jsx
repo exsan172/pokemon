@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import { getData } from "../adapter"
 import Cards from "../components/cards.components"
 import Search from "../components/search.componnets"
+import ModalsCatch from "../components/modalsCatch.components"
 
 const Home = () => {
 	const [pokemon, setPokemon] = useState([])
@@ -45,10 +46,10 @@ const Home = () => {
 
 	return (
 		<div className="flex flex-col mt-10">
-			<div className="flex mx-2">
-				<Search click={searchPokemon}/>
+			<div className="flex mx-2 justify-center">
+				<Search click={searchPokemon} generate={randomPokemon}/>
 			</div>
-			<div className="flex mt-5 justify-center flex-wrap">
+			<div className="flex mt-10 justify-center flex-wrap">
 			{
 				pokemon.map((poke,i) => {
 					return (
