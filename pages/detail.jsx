@@ -21,7 +21,7 @@ const Detail = () => {
             {
                 detailData.length !== 0 ?
                 <div className="flex mt-20 px-3 justify-center mb-10">
-                    <div className="flex w-11/12 md:w-6/12 flex-col items-center ">
+                    <div className="flex w-11/12 md:w-6/12 flex-col items-center">
                         <div className="flex mb-20 flex-col">
                             <div className="flex">
                                 <span className="font-bold text-4xl capitalize">{detailData.name}</span>
@@ -162,9 +162,9 @@ const Detail = () => {
                                 </div>
                                 <div className="flex mt-5 flex-wrap">
                                     {
-                                        detailData.moves.map(mv => {
+                                        detailData.moves.map((mv, i) => {
                                             return (
-                                                <span className="px-4 py-2 rounded-full border m-1 text-xs">{mv.move.name}</span>
+                                                <span className="px-4 py-2 rounded-full border m-1 text-xs" key={i}>{mv.move.name}</span>
                                             )
                                         })
                                     }
