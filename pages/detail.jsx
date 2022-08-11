@@ -54,7 +54,7 @@ const Detail = () => {
                                         Height
                                     </div>
                                     <div className="flex w-8/12">
-                                        <span>{detailData.height} "</span>
+                                        <span>{detailData.height} &apos;&apos;</span>
                                     </div>
                                 </div>
                                 <div className="flex my-1">

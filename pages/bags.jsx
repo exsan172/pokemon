@@ -65,7 +65,7 @@ const Bags = () => {
                                         <div className="flex my-3 items-center" key={i}>
                                             <div className="flex w-8/12 md:w-3/12 lg:w-2/12 text-gray-500">
                                                 <div style={{ width:"70px", height:"70px", position:"relative" }}>
-                                                    <Image src={Assets.BallSvg}/>
+                                                    <Image src={Assets.BallSvg} alt="poke-ball"/>
                                                 </div>
                                             </div>
                                             <div className="flex w-8/12 flex-col">
@@ -91,7 +91,7 @@ const Bags = () => {
                                 })
                             :
                                 <div className="flex justify-center items-center flex-col my-10">
-                                    <p>You don't have any pokémon yet.</p>
+                                    <p>You don&apos;t have any pokémon yet.</p>
                                     <Link href="/">
                                         <a>
                                             <button className="bg-red-500 text-white w-12/12 py-2 px-6 rounded-lg mt-5 text-sm">Explore Pokemon</button>

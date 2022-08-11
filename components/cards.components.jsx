@@ -25,7 +25,7 @@ const Cards = ({ name, catchPokemon, refresh }) => {
             <Link href={{ pathname: "/detail", query : { "name" : name } }}>
                 <a>
                     <div className="flex p-5">
-                        <Image src={Assets.BallSvg}/>
+                        <Image src={Assets.BallSvg} alt="poke-ball"/>
                     </div>
                     <div className="flex justify-center h-full">
                         <span className="capitalize">{name}</span>
@@ -45,7 +45,7 @@ const Cards = ({ name, catchPokemon, refresh }) => {
                 </div>
                 <div className="bg-gray-100 px-5 py-3 rounded-full flex shadow-sm cursor-pointer mt-2 justify-center" onClick={catchPokemon}>
                     <div className="flex">
-                        <Image src={Assets.Ball} width={20} height={20} className="shadow-sm"/>
+                        <Image src={Assets.Ball} width={20} height={20} alt="ball" className="shadow-sm"/>
                     </div>
                     <div className="flex ml-3">
                         <span className="text-black text-sm">
