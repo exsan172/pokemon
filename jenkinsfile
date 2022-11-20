@@ -7,4 +7,12 @@ pipeline {
             }
         }
     }
+    post {
+        success {
+            echo "success Deploy !"
+        }
+        failure {
+            echo "Failure Deploy !"
+        }
+    }
 }
