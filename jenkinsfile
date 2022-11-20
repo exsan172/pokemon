@@ -3,17 +3,33 @@ pipeline {
     stages {
         stage("Build") {
             steps {
-                echo "hello jancok"
+                sh '''#!/bin/bash
+                    sudo docker build -t pokemon .
+                '''
             }
         }
-        stage("Test") {
+        stage("Check Container") {
             steps {
-                echo "hello jancok"
+                sh '''#!bin/bash
+                    CNAME="pokemon-apps"
+                    if [ "$(sudo docker ps -qa -f name=$CNAME)" ]; then
+                        echo ":: Found container - $CNAME"
+                        if [ "$(sudo docker ps -q -f name=$CNAME)" ]; then
+                            echo ":: Stopping running container - $CNAME"
+                            sudo docker stop $CNAME;
+                        fi
+                        echo ":: Removing stopped container - $CNAME"
+                        sudo docker rm $CNAME;
+                    fi
+                '''
             }
         }
         stage("Deploy") {
             steps {
-                echo "hello jancok"
+                sh '''#!bin/bash
+                    sudo docker container create --name pokemon-apps -p 4312:3000 pokemon:latest
+                    sudo docker container start pokemon-apps
+                '''
             }
         }
     }
