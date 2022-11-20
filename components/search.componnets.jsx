@@ -13,7 +13,7 @@ const Search = ({ click, generate }) => {
     return (
         <div className="flex">
             <div className="flex">
-                <input type="text" value={search} onChange={(e) => setSearch(e.target.value)} className="border px-3 py-2 rounded" placeholder="search pokemon ..."/>
+                <input type="text" value={search} onChange={(e) => setSearch(e.target.value)} className="border px-3 py-2 rounded" placeholder="search kontol ..."/>
             </div>
             <div className="flex mx-2">
                 <button className="bg-red-500 px-4 py-2 text-white rounded-md" onClick={() => submit()}>
